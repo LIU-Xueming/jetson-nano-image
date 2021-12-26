@@ -3,16 +3,24 @@
 > - https://pythops.com/post/create-your-own-image-for-jetson-nano-board.html  
 > - https://codepyre.com/2019/08/building-custom-root-filesystems/
 
-> 说明：希望自定义 NVIDIA Jetson Nano 板镜像文件，去掉不必要的应用，同时安装常用的 Python、ROS 等工具。参考了上述链接中的内容，对所需做了修改。计划考虑有最小桌面版以及仅命令行的两种。
+> 说明：
+> - 希望自定义 NVIDIA Jetson Nano 板镜像文件，去掉不必要的应用，同时安装常用的 Python、ROS 等工具。参考了上述链接中的内容，对所需做了修改。计划考虑有最小桌面版以及仅命令行的两种。  
+> - 可以自行阅读相关脚本文件，已对其进行注释。
 
 ## 第一次操作指南：
 1）下载该脚本文件：
-- $ git clone https://github.com/pythops/jetson-nano-image
+- $ git clone git@github.com:LIU-Xueming/jetson-nano-image.git
 - $ cd jetson-nano-image
 
 2）创建 rootfs
-- $ export JETSON_ROOTFS_DIR=~/jetson-rootfs
-- $ sudo -E ./create-rootfs.sh  （注意需要修改ubuntu版本与下面rootfs的ubuntu版本一致）
+- $ export JETSON_ROOTFS_DIR=~/jetson-rootfs  # 自定义 rootfs 的路径
+- $ sudo -E ./create-rootfs.sh 
+> From man sudo :  
+> -E, --preserve-env  
+> Indicates to the security policy that the user wishes to preserve their existing 
+> environment variables. The security policy may return an error if the user does 
+> not have permission to preserve the environment.  
+
 ![rootfs](images/rootfs.png)
 
 3）定制 rootfs
