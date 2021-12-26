@@ -37,13 +37,13 @@
     - iso-codes
     - libffi6
     - libncursesw5
+    - libpython3.6-stdlib
+    - libpython3.6-minimal
     - libpython3-stdlib
-    - libpython3.8-minimal
-    - libpython3.8-stdlib
-    - libreadline8
+    - libreadline7 
     - libtinfo5
     - python3-minimal
-    - python3.8
+    - python3.6
     - libglvnd0
     - libdrm-common
     - libdrm2
@@ -60,13 +60,14 @@
     - libxcb-sync1
     - libxcb-xfixes0
     - libxshmfence1
-    - libpython2-stdlib
-    - python2
-    - python2-minimal
-    - python-is-python2
+    - libpython2.7-stdlib
+    - python2.7
+    - python2.7-minimal
+    - python
     - libgstreamer1.0-0
     - libgstreamer-plugins-bad1.0-0
     - libpangocairo-1.0-0
+    - libasound2
 
 - name: Install core packages
   apt:
@@ -98,6 +99,7 @@
     - usbutils
     - vim
     - wpasupplicant
+    - network-manager
 
 - name: Generate locales
   locale_gen:
